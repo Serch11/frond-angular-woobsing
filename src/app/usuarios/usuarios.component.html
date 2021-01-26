@@ -1,0 +1,64 @@
+<div class="container my-4 mb-4 mx-auto">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <ng-container *ngIf="id; else elseTemplate">
+        <h2>Editar Usuario</h2>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <h2>Agregar Usuario</h2>
+      </ng-template>
+      <form [formGroup]="form" (ngSubmit)="guardarUsuario()">
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text bg-white">
+                <i class="fas fa-user-circle" [class.green-color]="this.form.get('nombres')?.valid"
+                  [class.red-color]="this.form.get('titular')?.invalid && this.form.get('nombres')?.touched"></i>
+              </div>
+            </div>
+            <input type="text" class="form-control" placeholder="Nombres" formControlName="nombres">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text bg-white">
+                <i class="fa fa-user-circle" [class.green-color]="this.form.get('apellidos')?.valid"
+                  [class.red-color]="this.form.get('apellidos')?.invalid && this.form.get('apellidos')?.touched"></i>
+              </div>
+            </div>
+            <input type="text" class="form-control" placeholder="Apellidos" formControlName="apellidos">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text bg-white">
+                <i class="fa fa-user-circle" [class.green-color]="this.form.get('correo')?.valid"
+                  [class.red-color]="this.form.get('correo')?.invalid && this.form.get('correo')?.touched"></i>
+              </div>
+            </div>
+            <input type="email" class="form-control" placeholder="Correo" formControlName="correo">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text bg-white">
+                <i class="fa fa-user-circle" [class.green-color]="this.form.get('telefono')?.valid"
+                  [class.red-color]="this.form.get('telefono')?.invalid && this.form.get('telefono')?.touched"></i>
+              </div>
+            </div>
+            <input type="text" class="form-control" placeholder="Telefono" formControlName="telefono">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-success btn-lg btn-block" [disabled]="form.invalid"> <i class="fas fa-database"></i>
+            ACEPTAR</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

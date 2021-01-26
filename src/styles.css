@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-size: 16px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  border: 0;
+}
+
+input.ng-touched.ng-invalid {
+  border-color: #ff5151;
+}
+
+input.ng-valid {
+  border-color: #00b058;
+}
+
+.green-color {
+  color: #00b058;
+}
+
+.red-color {
+  color: #ff5151;
+}

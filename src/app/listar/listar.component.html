@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="box-usuarios">
+    <div class="usuarios" *ngFor="let usuario of User">
+      <div class="card" style="border: none;">
+        <h2>Datos Personales</h2>
+        <p>Nombres: {{usuario.nombres}}</p>
+        <p>Apellidos: {{usuario.apellidos}}</p>
+        <p>Correo: {{usuario.correo}}</p>
+        <p>Telefono: {{usuario.telefono}}</p>
+        <a class="btn btn-primary" id="guardar" [routerLink]="['/crear-usuario',usuario.id]">Editar</a>
+        <button class="btn btn-danger" id="eliminar" (click)="eliminar(usuario.id,$event)">Eliminar</button>
+        <div class="card-body"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
